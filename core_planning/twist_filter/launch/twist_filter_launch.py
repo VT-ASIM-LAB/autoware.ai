@@ -38,6 +38,9 @@ def generate_launch_description():
     loop_rate = LaunchConfiguration('loop_rate')
     declare_loop_rate = DeclareLaunchArgument(name='loop_rate', default_value='30.0')
 
+    use_twist = LaunchConfiguration('use_twist')
+    declare_use_twist = DeclareLaunchArgument(name='use_twist', default_value='True')
+
     use_decision_maker = LaunchConfiguration('use_decision_maker')
     declare_use_decision_maker = DeclareLaunchArgument(name='use_decision_maker', default_value='False')
 
@@ -104,6 +107,7 @@ def generate_launch_description():
                 ],
                 parameters = [
                     {'loop_rate': loop_rate},
+                    {'use_twist': use_twist},
                     {'use_decision_maker' : use_decision_maker}
                 ]
             )
